@@ -1,0 +1,115 @@
+---
+import Nav from "../components/Nav.astro";
+import CardHeader from "../components/CardHeader.astro";
+---
+
+<!-- 
+#####[ HTML ]
+-->
+<div class="header">
+    <div class="header-content">
+        <!-- Navegacion -->
+        <Nav />
+        <div class="header-sub-content">
+            <!-- Jugadores Online -->
+            <CardHeader
+                img="/images/icon/ip.png"
+                text1="27 JUGADORES ONLINE"
+                text2="PLAY.HEROCRAFT.MC"
+                newtext="CLICK PARA COPIAR IP"
+            />
+
+            <!-- Logo -->
+            <div class="logo-container">
+                <img src="/images/logo.png" alt="Logo" />
+            </div>
+
+            <!-- Mapa Herocraft -->
+            <CardHeader
+                img="/images/icon/map.png"
+                text1="MAPA HEROCRAFT"
+                text2="DYNAMAP.COM"
+                newtext="CLICK PARA VER"
+            />
+        </div>
+    </div>
+</div>
+
+<!-- 
+#####[ CSS ]
+-->
+
+<style>
+    /******** HEADER ********/
+    .header {
+        position: relative;
+        background-image: url("/images/header.png"); /* Cambia esto por la ruta de tu imagen */
+        background-size: cover;
+        background-position: center;
+        height: 400px; /* Altura del header */
+    }
+
+    .header::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: #13151aec; /* Controla la opacidad aquí */
+    }
+
+    .header-content {
+        position: relative;
+        z-index: 1; /* Asegura que el contenido esté por encima del efecto de oscurecimiento */
+    }
+
+    .header-sub-content {
+        display: flex;
+        justify-content: center; /* Cambia a 'space-around' o 'center' */
+        align-items: center;
+    }
+
+    /******** LOGO ********/
+    .logo-container {
+        text-align: center; /* Centra el contenido del contenedor */
+        margin-top: 50px; /* Espacio entre el navegador y el logo, ajusta según sea necesario */
+    }
+
+    .logo-container img {
+        width: 300px; /* Ajusta el ancho del logo según tus necesidades */
+        height: auto; /* Mantiene la relación de aspecto del logo */
+        max-width: 100%; /* Asegura que el logo sea responsive y no exceda el ancho del contenedor */
+        transition: filter 0.3s ease; /* Se agrega transform a la transición */
+        animation:
+            fadeIn 3s ease-out,
+            levitate 3s ease-in-out 1s infinite;
+    }
+
+    .logo-container img:hover {
+        filter: brightness(87%);
+        animation-play-state: paused; /* Pausa la animación levitate */
+        cursor: pointer;
+    }
+
+    /*####### Animaciones #######*/
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    @keyframes levitate {
+        0%,
+        100% {
+            transform: translateY(0); /* Logo en posición normal*/
+        }
+        50% {
+            transform: translateY(-10px); /* Logo levitado */
+        }
+    }
+</style>

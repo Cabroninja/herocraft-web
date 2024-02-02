@@ -1,0 +1,136 @@
+---
+import Login from "../components/Login.astro";
+import Register from "../components/Register.astro";
+---
+
+<!-- 
+#####[ HTML ]
+-->
+
+<div class="auth-component">
+
+    <!-- Contenido Izquierda -->
+    <div class="left-content">
+
+        <img src="/images/warrior.png" alt="Imagen del servidor" />
+        <div class="text-content">
+            <h2>Bienvenido Herocraft 👋</h2>
+            <p>
+                Herocraft es un servidor de Minecraft único que ofrece una
+                experiencia divertida para jugadores apasionados por el PVP y la
+                supervivencia, en un entorno estilo RPG.
+            </p>
+        </div>
+
+    </div>
+
+    <!-- Contenido Derecha -->
+    <div class="right-content">
+
+        <button id="login-button">Iniciar sesión</button>
+        <button id="register-button">Registrarse</button>
+
+    </div>
+
+</div>
+
+<!-- Dialogo Inicio / Registro -->
+<Login />
+<Register />
+
+<!-- 
+#####[ JAVASCRIPT ]
+-->
+
+<script></script>
+
+<!-- 
+#####[ CSS ]
+-->
+
+<style>
+
+    .auth-component {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px;
+        background-color: #1c1e27; /* Color de fondo */
+        border-radius: 5px;
+        animation: fadeIn 3s ease-in-out;
+    }
+
+    .left-content {
+        display: flex; /* Mostrar los elementos en línea */
+        align-items: center; /* Alinear verticalmente en el centro */
+    }
+
+    .right-content {
+        text-align: right;
+    }
+
+    img {
+        width: 120px;
+        height: auto;
+        margin-right: 20px; /* Espacio entre la imagen y la descripción */
+    }
+
+    .text-content {
+        display: flex;
+        flex-direction: column; /* Alinear el título y el párrafo uno debajo del otro */
+    }
+
+    h2 {
+        margin: 0; /* Eliminar el margen predeterminado del título */
+        font-family: "Kanit", sans-serif; /* Usa la fuente personalizada */
+        color: #be54f5;
+        font-weight: 400;
+        font-size: 26px; /* Cambia el tamaño de fuente según tus preferencias */
+        text-shadow: 0 0 3px rgba(231, 231, 231, 0.281); /* Resplandor blanco*/
+    }
+
+    p {
+        margin: 0; /* Eliminar el margen predeterminado del párrafo */
+        max-width: 1200px; /* Define el ancho máximo */
+        font-family: "Kanit", sans-serif; /* Usa la fuente personalizada */
+        color: rgb(206, 205, 205);
+        font-weight: 300;
+        font-size: 18px; /* Cambia el tamaño de fuente según tus preferencias */
+    }
+
+    button {
+        margin: 10px;
+        padding: 10px 20px;
+        background-color: #a549d3;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        width: 150px; /* Ancho fijo */
+        height: 40px; /* Altura fija */
+
+        line-height: 20px; /* Centra el texto verticalmente */
+        font-family: "Kanit", sans-serif; /* Usa la fuente personalizada */
+        color: #ffffff;
+        font-weight: 400;
+        font-size: 18px; /* Cambia el tamaño de fuente según tus preferencias */
+
+        transition: filter 0.3s ease; /* Se agrega transform a la transición */
+    }
+
+    button:hover {
+        filter: brightness(80%);
+    }
+
+    /*####### Animaciones #######*/
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+</style>

@@ -1,0 +1,82 @@
+---
+// Este es el área de scripting de tu componente Astro
+---
+
+<nav class="navegacion">
+    <ul>
+      <li><a href="/">Inicio</a></li>
+      <li><a href="/discord">Discord</a></li>
+      <li><a href="/contact">Tutoriales</a></li>
+
+      <li><a href="/contact">Tienda</a></li>
+
+      <li><a href="/contact">Wiki</a></li>
+      <li><a href="/contact">Ban List</a></li>
+      <li><a href="/contact">Descargas</a></li>
+
+      <!-- Agrega más elementos de navegación según sea necesario -->
+    </ul>
+  </nav>
+  
+  <script>
+
+    document.addEventListener("DOMContentLoaded", function() {
+      // Obtener la URL actual
+      var currentPath = window.location.pathname;
+  
+      // Seleccionar todos los enlaces de la navegación
+      var navLinks = document.querySelectorAll('.navegacion a');
+  
+      // Iterar sobre cada enlace para verificar si su href coincide con la URL actual
+      navLinks.forEach(function(link) {
+        if(link.getAttribute('href') === currentPath) {
+          link.classList.add('active');
+        }
+      });
+    });
+
+  </script>
+  
+  <style>
+    .navegacion ul {
+      list-style: none;
+      padding: 20px;
+      margin: 0;
+      display: flex;
+      justify-content: center; /* Centra los elementos horizontalmente */
+      gap: 50px; /* Espacio entre cada elemento li */
+    }
+  
+    .navegacion li {
+      /* Estilos opcionales para los elementos li, si es necesario */
+    }
+    .navegacion a.active {
+        color: white; /* Color blanco para el enlace activo */
+    }
+  
+    @keyframes fadeIn {
+	from { opacity: 0; }
+	to { opacity: 1; }
+	}
+
+    .navegacion a {
+      text-decoration: none;
+      color: rgb(163, 163, 163); /* Color blanco para los enlaces */
+      font-family: 'Kanit', sans-serif; /* Usa la fuente personalizada */
+      font-weight: 500;
+      text-shadow: 0 0 5px rgba(255, 255, 255, 0.1); /* Resplandor blanco*/
+      font-size: 1.2em; /* Tamaño más grande para la fuente */
+      transition: color 0.3s ease;
+      animation: fadeIn 2s ease-in-out;
+    }
+  
+    .navegacion a:hover {
+      color: rgb(255, 255, 255); /* Color al pasar el cursor */
+      cursor: pointer;
+      text-shadow: 0 0 8px rgba(255, 255, 255, 0.5); 
+            
+    }
+
+  </style>
+  
+  
